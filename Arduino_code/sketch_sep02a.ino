@@ -37,10 +37,10 @@ void setup() {
   BTSerial.begin(9600); // HC-06 出廠的鮑率：每個藍牙晶片的鮑率都不太一樣，請務必確認
 
 
-  pinMode(10, OUTPUT);
-//  myservo.attach(9, 500, 2400); // 修正脈衝寬度範圍
-  myservo.attach(9);
-  myservo.write(30); // 一開始先移到30度
+//  pinMode(3, OUTPUT);
+//  myservo.attach(3, 500, 2400); // 修正脈衝寬度範圍
+  myservo.attach(9);    //ping is D6
+  myservo.write(120); // 一開始先移到30度
   delay(300);
 }
 
@@ -77,7 +77,7 @@ void loop() {
     
     sprintf(str, "%s", cmd);
     // For motor
-    if(str[0] == 79 || str[0] == 'O' {  // O
+    if(str[0] == 79 || str[0] == 'o') {  // o
 //      for(int i = 500; i <= 2400; i+=100){
 //        myservo.writeMicroseconds(i); // 直接以脈衝寬度控制
         Serial.println(1);
